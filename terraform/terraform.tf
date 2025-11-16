@@ -27,7 +27,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "vproactions19"
+    bucket = "vproalpha19"
     key    = "terraform.tfstate"
     region = "us-east-2"
   }
