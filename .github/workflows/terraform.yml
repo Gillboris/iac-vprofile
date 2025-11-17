@@ -34,11 +34,13 @@ jobs:
       - name: Checkout the source code
         uses: actions/checkout@v4
 
-      - name: Setup Terraform with specified version on runner
-        uses: hashicorp/setup-terraform@v2
-        with:
-          terraform_version: "1.6.4"
-          terraform_wrapper: false
+      - name: Install Terraform 1.6.4 manually
+        run: |
+          wget https://releases.hashicorp.com/terraform/1.6.4/terraform_1.6.4_linux_amd64.zip
+          unzip terraform_1.6.4_linux_amd64.zip
+          sudo mv terraform /usr/local/bin/
+          terraform version
+
  
       - name: Terraform init
         id: init
