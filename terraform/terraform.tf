@@ -27,7 +27,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = " "
+    bucket = "katapilar"
     key    = "terraform.tfstate"
     region = "us-east-2"
   }
