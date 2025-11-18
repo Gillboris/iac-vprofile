@@ -39,7 +39,8 @@ jobs:
         # Uncomment and specify the version if needed
         # with:
         #   terraform_version: 1.6.3
-
+      - name: Terraform destroy 
+        run : terraform destroy -y 
       - name: Terraform init
         id: init
         run: terraform init -backend-config="bucket=$BUCKET_TF_STATE"
